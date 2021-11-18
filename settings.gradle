@@ -1,1 +1,5 @@
 rootProject.name = 'java-instrumentation-template'
+include 'pega-axis'
+include 'pega-axis2'
+include 'pega-httpclient-4.0'
+include 'pega-httpclient'
