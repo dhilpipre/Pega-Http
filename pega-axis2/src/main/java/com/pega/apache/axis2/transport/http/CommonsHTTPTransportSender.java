@@ -12,7 +12,7 @@ public abstract class CommonsHTTPTransportSender {
 
     public abstract String getName();
 
-    @Trace(dispatcher = true)
+    @Trace
     public Handler.InvocationResponse invoke(MessageContext msgContext) {
         NewRelic.getAgent().getTracedMethod().setMetricName(new String[]{"Custom", getName(), msgContext.getSoapAction()});
         return Weaver.callOriginal();

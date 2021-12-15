@@ -22,7 +22,7 @@ import com.pega.apache.axis2.engine.Handler.InvocationResponse;
 public abstract class HTTPTransportUtils {
 
     @SuppressWarnings("rawtypes")
-	@Trace(dispatcher = true)
+	@Trace
     public static boolean processHTTPGetRequest(MessageContext msgContext, OutputStream out, String soapAction, String requestURI, ConfigurationContext configurationContext, Map requestParameters) throws AxisFault {
         boolean value = Weaver.callOriginal();
         String serviceName = null;
@@ -61,7 +61,7 @@ public abstract class HTTPTransportUtils {
         return value;
     }
 
-    @Trace(dispatcher = true)
+    @Trace
     public static InvocationResponse processHTTPPostRequest(MessageContext msgContext, InputStream in, OutputStream out, String contentType, String soapActionHeader, String requestURI) throws AxisFault {
         Handler.InvocationResponse return_response = Weaver.callOriginal();
 

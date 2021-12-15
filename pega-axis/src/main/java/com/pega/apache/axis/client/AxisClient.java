@@ -14,7 +14,7 @@ public abstract class AxisClient {
 
 	public abstract String getName();
 
-	@Trace(dispatcher=true)
+	@Trace
 	public void invoke(MessageContext msgContext) {
         String handlerName = msgContext.getStrProp(MessageContext.ENGINE_HANDLER);
         if(handlerName != null) {

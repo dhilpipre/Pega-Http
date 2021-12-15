@@ -16,7 +16,7 @@ public abstract class OperationClient {
     
     protected AxisCallback axisCallback = Weaver.callOriginal();
     
-    @Trace(dispatcher = true)
+    @Trace
     public void executeImpl(boolean b) {
         OperationContext oc1 = getOperationContext();
         if (oc1 != null) {

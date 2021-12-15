@@ -13,7 +13,7 @@ import com.pega.apache.axis2.description.AxisMessage;
 @Weave(type = MatchType.BaseClass)
 public abstract class AbstractMessageReceiver {
 
-    @Trace(dispatcher = true)
+    @Trace
     protected void invokeBusinessLogic(MessageContext msgCtx) throws AxisFault {
         AxisMessage axisMsg = msgCtx.getAxisMessage();
         String axisName = axisMsg.getName();
@@ -25,7 +25,7 @@ public abstract class AbstractMessageReceiver {
         Weaver.callOriginal();
     }
 
-    @Trace(dispatcher = true)
+    @Trace
     public void receive(MessageContext msgCtx) throws AxisFault {
         AxisMessage axisMsg = msgCtx.getAxisMessage();
         String axisName = axisMsg.getName();

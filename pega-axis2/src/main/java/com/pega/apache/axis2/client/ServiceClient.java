@@ -12,22 +12,22 @@ import com.pega.apache.axis2.client.async.AxisCallback;
 @Weave
 public abstract class ServiceClient {
 
-	@Trace(dispatcher = true)
+	@Trace
 	public OMElement sendReceive(QName operationQName, OMElement xmlPayload) throws AxisFault {
 		return Weaver.callOriginal();
 	}
 	
-	@Trace(dispatcher = true)
+	@Trace
 	public void sendReceiveNonBlocking(QName operation, OMElement elem, AxisCallback callback) {
 		Weaver.callOriginal();
 	}
 	
-	@Trace(dispatcher = true)
+	@Trace
 	public void sendRobust(QName operation, OMElement elem) {
 		Weaver.callOriginal();
 	}
 	
-	@Trace(dispatcher = true)
+	@Trace
 	public void fireAndForget(QName operation, OMElement elem) {
 		Weaver.callOriginal();
 	}

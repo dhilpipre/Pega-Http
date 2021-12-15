@@ -18,7 +18,7 @@ import java.io.OutputStream;
 @Weave
 public abstract class RESTUtil {
 
-    @Trace(dispatcher = true)
+    @Trace
     public static InvocationResponse processURLRequest(MessageContext msgContext, OutputStream out, String contentType) throws AxisFault {
         Handler.InvocationResponse return_response = Weaver.callOriginal();
 
@@ -54,7 +54,7 @@ public abstract class RESTUtil {
         return return_response;
     }
 
-    @Trace(dispatcher = true)
+    @Trace
     public static InvocationResponse processXMLRequest(MessageContext msgContext, InputStream in, OutputStream out, String contentType) throws AxisFault {
         Handler.InvocationResponse return_response = Weaver.callOriginal();
 

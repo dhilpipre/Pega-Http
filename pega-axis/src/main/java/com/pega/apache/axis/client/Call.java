@@ -16,7 +16,7 @@ public abstract class Call {
 	public abstract Service getService();
 	private SOAPService myService = Weaver.callOriginal();
 
-	@Trace(dispatcher=true)
+	@Trace
 	public void invoke() {
 		String serviceName = null;
 		Service service  = getService();
