@@ -31,8 +31,7 @@ public abstract class HttpClient {
 				uriString = protocol + "://"+host+"/"+path;
 			}
 			java.net.URI uri = java.net.URI.create(uriString);
-			NewRelic.getAgent().getLogger().log(Level.FINE, "Created URI: {0} from string: {1}", uri,uriString);
-			HttpParameters params = HttpParameters.library("Pega-HttpCommons").uri(uri).procedure("executeMethod").extendedInboundHeaders(null).build();
+			HttpParameters params = HttpParameters.library("Pega-HttpCommons").uri(uri).procedure(method.getName()).extendedInboundHeaders(null).build();
 			NewRelic.getAgent().getTracedMethod().reportAsExternal(params);
 		
 		int result =  Weaver.callOriginal();
